@@ -1,0 +1,53 @@
+{
+	"name": "Azure CLI",
+	"dockerFile": "Dockerfile",
+	
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {		
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-vscode.azurecli"
+			]
+		}
+	},
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "az --version",
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/tailscale:1": {},
+		"ghcr.io/devcontainers-contrib/features/taxi-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "17",
+			"jdkDistro": "open"
+		},
+		"ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/zig:1": {
+			"version": "0.10.0"
+		},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			"plugins": "ssh-agent npm",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+			"username": "vscode"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/go-task:1": {
+			"version": "3"
+		},
+		"ghcr.io/dhoeric/features/act:1": {}
+	}
+}
